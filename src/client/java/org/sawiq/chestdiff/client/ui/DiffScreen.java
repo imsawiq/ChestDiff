@@ -68,9 +68,8 @@ public final class DiffScreen extends Screen {
     //?} else {
     /*@Override
     public void render(net.minecraft.client.gui.GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        renderBackground(graphics, mouseX, mouseY, partialTick);
-        renderContents(graphics);
         super.render(graphics, mouseX, mouseY, partialTick);
+        renderContents(graphics);
     }
     *///?}
 

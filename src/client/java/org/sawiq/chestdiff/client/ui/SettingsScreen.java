@@ -72,9 +72,8 @@ public final class SettingsScreen extends Screen {
     //?} else {
     /*@Override
     public void render(net.minecraft.client.gui.GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        renderBackground(graphics, mouseX, mouseY, partialTick);
-        GuiRenderAdapter.centered(graphics, title, width / 2, 16, 0xFFFFFFFF);
         super.render(graphics, mouseX, mouseY, partialTick);
+        GuiRenderAdapter.centered(graphics, title, width / 2, 16, 0xFFFFFFFF);
     }
     *///?}
 

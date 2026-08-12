@@ -39,10 +39,9 @@ public final class ConfirmationScreen extends Screen {
     //?} else {
     /*@Override
     public void render(net.minecraft.client.gui.GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        renderBackground(graphics, mouseX, mouseY, partialTick);
+        super.render(graphics, mouseX, mouseY, partialTick);
         GuiRenderAdapter.centered(graphics, title, width / 2, height / 2 - 28, 0xFFFF6476);
         GuiRenderAdapter.centered(graphics, message, width / 2, height / 2 - 8, 0xFFE7EAF0);
-        super.render(graphics, mouseX, mouseY, partialTick);
     }
     *///?}
 

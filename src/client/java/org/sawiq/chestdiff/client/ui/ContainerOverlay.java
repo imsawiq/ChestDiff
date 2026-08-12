@@ -58,10 +58,10 @@ public final class ContainerOverlay {
             ScreenEvents.afterBackground(screen).register((rendered, graphics, mouseX, mouseY, tickDelta) ->
                     render(containerScreen, graphics, mouseX, mouseY, state, false));
             //?} elif >=1.21.6 {
-            /*ScreenEvents.beforeRender(screen).register((rendered, graphics, mouseX, mouseY, tickDelta) ->
-                    prepareTooltip(containerScreen, graphics, mouseX, mouseY, state));
-            ScreenEvents.afterRender(screen).register((rendered, graphics, mouseX, mouseY, tickDelta) ->
-                    render(containerScreen, graphics, mouseX, mouseY, state, false));
+            /*ScreenEvents.afterRender(screen).register((rendered, graphics, mouseX, mouseY, tickDelta) -> {
+                render(containerScreen, graphics, mouseX, mouseY, state, false);
+                prepareTooltip(containerScreen, graphics, mouseX, mouseY, state);
+            });
             *///?} else {
             /*ScreenEvents.afterRender(screen).register((rendered, graphics, mouseX, mouseY, tickDelta) ->
                     render(containerScreen, graphics, mouseX, mouseY, state, true));

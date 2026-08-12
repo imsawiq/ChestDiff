@@ -76,15 +76,15 @@ public final class ContainerObservationManager {
     private void startSession(Minecraft client, AbstractContainerScreen<?> screen) {
         ChestDiffConfig config = configSupplier.get();
         Optional<InteractionCorrelation.CorrelatedTarget> target = correlation.consume(client);
+        if (!SupportedContainerMenus.shouldObserve(screen.getMenu(), config.recordUtilityContainers())) {
+            return;
+        }
         if (identityResolver.isEnderStorage(client, target, screen.getTitle())) {
             return;
         }
         String menuType = screen.getMenu().getClass().getName();
         ContainerIdentity identity = identityResolver.resolve(
                 client, target, menuType, screen.getTitle().getString(), config);
-        if (!identity.persistent() && !config.saveVirtualContainers()) {
-            // The session still displays a clear uncertainty state but never writes it to disk.
-        }
         activeSession = new ContainerObservationSession(
                 screen, identity, snapshotAdapter, diffEngine, storage, configSupplier);
     }
