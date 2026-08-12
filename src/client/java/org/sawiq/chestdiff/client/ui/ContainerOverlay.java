@@ -61,6 +61,7 @@ public final class ContainerOverlay {
             /*ScreenEvents.afterRender(screen).register((rendered, graphics, mouseX, mouseY, tickDelta) -> {
                 render(containerScreen, graphics, mouseX, mouseY, state, false);
                 prepareTooltip(containerScreen, graphics, mouseX, mouseY, state);
+                GuiRenderAdapter.renderPendingTooltip(graphics);
             });
             *///?} else {
             /*ScreenEvents.afterRender(screen).register((rendered, graphics, mouseX, mouseY, tickDelta) ->

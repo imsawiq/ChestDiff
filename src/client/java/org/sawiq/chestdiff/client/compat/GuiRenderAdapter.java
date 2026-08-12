@@ -20,6 +20,10 @@ public final class GuiRenderAdapter {
     }
 
     public static void text(Object graphics, Component text, int x, int y, int color, boolean shadow) {
+        // Minecraft 1.21.6+ interprets GUI text colors as ARGB. Keep legacy
+        // RGB call sites visible while preserving explicitly supplied alpha.
+        //? if >=1.21.6
+        color = opaqueIfRgb(color);
         //? if >=26.1 {
         ((net.minecraft.client.gui.GuiGraphicsExtractor) graphics)
                 .text(Minecraft.getInstance().font, text, x, y, color, shadow);
@@ -64,6 +68,16 @@ public final class GuiRenderAdapter {
         /*((net.minecraft.client.gui.GuiGraphics) graphics)
                 .renderTooltip(Minecraft.getInstance().font, lines, java.util.Optional.empty(), mouseX, mouseY);
         *///?}
+    }
+
+    public static void renderPendingTooltip(Object graphics) {
+        //? if >=1.21.6 && <1.21.9 {
+        /*((net.minecraft.client.gui.GuiGraphics) graphics).renderDeferredTooltip();
+        *///?}
+    }
+
+    private static int opaqueIfRgb(int color) {
+        return (color & 0xFF000000) == 0 ? color | 0xFF000000 : color;
     }
 
     public static void item(Object graphics, ItemStack stack, int x, int y) {
