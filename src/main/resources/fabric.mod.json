@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "chestdiff",
+  "version": "${version}",
+  "name": "ChestDiff",
+  "description": "Shows what changed in containers since you last observed them.",
+  "authors": ["sawiq_"],
+  "icon": "assets/chestdiff/icon.png",
+  "contact": {
+    "homepage": "https://github.com/imsawiq/ChestDiff",
+    "sources": "https://github.com/imsawiq/ChestDiff",
+    "issues": "https://github.com/imsawiq/ChestDiff/issues"
+  },
+  "license": "GPL-3.0",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "org.sawiq.chestdiff.client.ChestDiffClient"
+    ]
+  },
+  "mixins": [
+    "chestdiff.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loaderVersion}",
+    "fabric-api": ">=${fabricApiVersion}",
+    "minecraft": "${minecraftVersion}"
+  }
+}
