@@ -88,8 +88,6 @@ public final class ChestDiffClient implements ClientModInitializer {
                 historyStorage,
                 () -> ScreenNavigationAdapter.open(client, new SettingsScreen(
                         ScreenNavigationAdapter.current(client),
-                        config,
-                        configRepository,
                         historyStorage,
                         observations.currentWorldScope(client).id())));
         ScreenNavigationAdapter.open(client, history);

@@ -73,6 +73,8 @@ public final class GuiRenderAdapter {
     public static void renderPendingTooltip(Object graphics) {
         //? if >=1.21.6 && <1.21.9 {
         /*((net.minecraft.client.gui.GuiGraphics) graphics).renderDeferredTooltip();
+        *///?} elif >=1.21.9 && <26.1 {
+        /*((net.minecraft.client.gui.GuiGraphics) graphics).renderDeferredElements();
         *///?}
     }
 
